@@ -1,0 +1,1 @@
+{"Info":"2015-06-05 16:15:25 <anonymous> 7150700c-756a-43d2-ba22-43b66970efbc request [GET]http://localhost:8542/api/git?rUrl=https://github.com/duojs/test - "}

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Get Detail of Github Repository";
+}
+<script src="../../Scripts/app.js" type="text/javascript"></script>
+
+<h2>@ViewBag.Title</h2>
+
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Repository</h1>
+            </hgroup>
+            <div ng-app="myApp" >
+            <div  ng-controller="RepCtrl"> 
+            repository Url: <input type="text" ng-model="repositoryUrl">
+            <br />
+            <br />
+            <button ng-click="getdetail()">Get Repository Detail</button>
+            <br />
+                <h1>
+                    home Page: {{ gitInfo.homePage }}
+                </h1>
+                <h2>
+                    Contributors Count: {{ gitInfo.contributorscount }}
+                </h2>
+                <ul>
+                    <li ng-repeat="branche in gitInfo.branches">
+                        <p>Branche Sha: {{ branche.BranchId.Sha }}  - Count Commits: {{ branche.CountCommits }}</p>
+                    </li>
+                </ul>
+            </div>
+
+  <div  ng-controller="BarCtrl" >
+  <br />repository Url: <input type="text" ng-model="repositoryUrl">
+            <br />
+            <button ng-click="getBar()">Get Branches Chart</button>
+            <br />
+ <canvas id="bar" class="chart chart-bar" data="data" labels="labels"></canvas> 
+    
+</div>
+
+       <div  ng-controller="PieCtrl" >
+       <br />
+       repository Url: <input type="text" ng-model="repositoryUrl">
+            <br />
+            <button ng-click="getPie()">Get Contributor Chart</button>
+            <br />
+    <canvas id="pie" class="chart chart-pie" data="data"labels="labels"></canvas> 
+    
+</div>
+</div>
+        </div>
+    </section>
+  
+</div>
